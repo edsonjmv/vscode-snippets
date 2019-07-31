@@ -1,0 +1,38 @@
+{
+  "Print to console": {
+    "prefix": "clo",
+    "body": [
+      "console.log($1);"
+    ],
+    "description": "Log output to console"
+  },
+  "Map function": {
+    "prefix": "map",
+    "body": [
+      "${1:array}.map(${2:item} => {",
+      "\treturn item;",
+      "})"
+    ],
+    "description": "Creates a map function"
+  },
+  "Filter function": {
+    "prefix": "filt",
+    "body": [
+      "${1:array}.filter(${2:item} => {",
+      "\treturn item;",
+      "})"
+    ],
+    "description": "Creates a filter function"
+  },
+  "Compare function": {
+    "prefix": "comp",
+    "body": [
+      "compare(a, b) {",
+      "\tif (a > b) return 1;",
+      "\tif (a == b) return 0;",
+      "\tif (a < b) return -1;",
+      "}"
+    ],
+    "description": "Creates compare function to sort arrays"
+  }
+}

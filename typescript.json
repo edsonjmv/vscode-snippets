@@ -1,0 +1,70 @@
+{
+  "Print to console": {
+    "prefix": "clo",
+    "body": [
+      "console.log($1);"
+    ],
+    "description": "Log output to console"
+  },
+  "Map function": {
+    "prefix": "map",
+    "body": [
+      "${1:array}.map(${2:item} => {",
+      "\treturn item;",
+      "})"
+    ],
+    "description": "Creates a map function"
+  },
+  "Filter function": {
+    "prefix": "filt",
+    "body": [
+      "${1:array}.filter(${2:item} => {",
+      "\treturn item;",
+      "})"
+    ],
+    "description": "Creates a filter function"
+  },
+  "Compare function": {
+    "prefix": "comp",
+    "body": [
+      "compare(a, b) {",
+      "\tif (a > b) return 1;",
+      "\tif (a == b) return 0;",
+      "\tif (a < b) return -1;",
+      "}"
+    ],
+    "description": "Creates compare function to sort arrays"
+  },
+  "Angular component": {
+    "prefix": "ngcomp",
+    "body": [
+      "import { Component } from '@angular/core';",
+      "",
+      "@Component({",
+      "\tselector: '${1:selector}',",
+      "\ttemplateUrl: './${1:selector}.component.html',",
+      "\tstyleUrls: ['./${1:selector}.component.scss']",
+      "})",
+      "export class ${2:NameComponent} {",
+      "\t$3",
+      "}"
+    ],
+    "description": "Creates an angular component from scratch"
+  },
+  "Angular Input": {
+    "prefix": "input",
+    "body": [
+      "@Input()",
+      "${1:name}: ${2|string,number,Object,string[],Object[]|};"
+    ],
+    "description": "Creates an angular Input()"
+  },
+  "Angular Output": {
+    "prefix": "output",
+    "body": [
+      "@Output()",
+      "${1:name}: EventEmitter<any> = new EventEmitter();"
+    ],
+    "description": "Creates an angular Input()"
+  }
+}

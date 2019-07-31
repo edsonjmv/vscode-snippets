@@ -66,5 +66,37 @@
       "${1:name}: EventEmitter<any> = new EventEmitter();"
     ],
     "description": "Creates an angular Input()"
+  },
+  "Angular Event Subscription": {
+    "prefix": "subsEvt",
+    "body": [
+      "this.${1:module}.${2:method}($3)",
+      "\t.pipe(takeUntil(this.unsubscribe$))",
+      "\t.subscribe(item => this.${4:property} = item);"
+    ],
+    "description": "Creates an rxjs event subscription"
+  },
+  "Angular Request Subscription": {
+    "prefix": "subsReq",
+    "body": [
+      "this.${1:module}.${2:method}($3)",
+      "\t.pipe(takeUntil(this.unsubscribe$))",
+      "\t.subscribe((res: ApiResponse) => {",
+      "\t\t$4",
+      "\t}, error => {",
+      "\t\t$5",
+      "\t})"
+    ],
+    "description": "Creates an rxjs http request subscription"
+  },
+  "Angular ngOnDestroy()": {
+    "prefix": "ngOnD",
+    "body": [
+      "ngOnDestroy() {",
+      "\tthis.unsubscribe$.next();",
+      "\tthis.unsubscribe$.complete();",
+      "}"
+    ],
+    "description": "Creates an ngOnDestroy method with rxjs unsubscribe events"
   }
 }
